@@ -31,7 +31,7 @@ set(${PROJECT_NAME}_SRCS
 add_library(${PROJECT_NAME}
   ${${PROJECT_NAME}_SRCS})
 
-target_link_libraries(${PROJECT_NAME}} spdlog)
+target_link_libraries(${PROJECT_NAME} spdlog)
 target_include_directories(${PROJECT_NAME}
   PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
