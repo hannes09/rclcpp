@@ -7,6 +7,7 @@ find_package(action_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rcl_action REQUIRED)
 find_package(rosidl_runtime_c REQUIRED)
+find_package(spdlog REQUIRED)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
@@ -30,6 +31,7 @@ set(${PROJECT_NAME}_SRCS
 add_library(${PROJECT_NAME}
   ${${PROJECT_NAME}_SRCS})
 
+target_link_libraries(${PROJECT_NAME}} spdlog)
 target_include_directories(${PROJECT_NAME}
   PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
