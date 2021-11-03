@@ -15,6 +15,7 @@ find_package(rclcpp REQUIRED)
 find_package(rcl_lifecycle REQUIRED)
 find_package(rosidl_typesupport_cpp REQUIRED)
 find_package(lifecycle_msgs REQUIRED)
+find_package(spdlog REQUIRED)
 
 ### CPP High level library
 add_library(rclcpp_lifecycle
@@ -23,6 +24,7 @@ add_library(rclcpp_lifecycle
   src/state.cpp
   src/transition.cpp
 )
+target_link_libraries(rclcpp_lifecycle spdlog)
 target_include_directories(${PROJECT_NAME}
   PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
